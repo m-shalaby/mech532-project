@@ -1,6 +1,8 @@
 function [xcg, zcg, J] = getInertiaParams(M)
 % Input
 %  M: Matrix consists of m x 4 matrix
+%   NOTE: IMPORTANT!! First row should be the payload (the cube). Length
+%   assumed be 50 mm.
 %   First column is mass of each component
 %   Second column is the x-coordinate (measured from nose of aricraft) of component.
 %   Fourth column is the y-coordinate (measured from center of aircraft) 
@@ -12,6 +14,7 @@ function [xcg, zcg, J] = getInertiaParams(M)
 %   (longitudinal axis)
 %   J: Inertia matrix
 
+cubeLength = 50e-3; % m
 mass_vec = M(:,1);
 x_vec = M(:,2);
 y_vec = M(:,3);
@@ -53,6 +56,15 @@ for i = 1:length(mass_vec)
     Izz = Izz + (x_vec_cg(i)^2+y_vec_cg(i)^2)*mass_vec(i);
 %     Izx = Izx + (z_vec_cg(i)*x_vec_cg(i))*mass_vec(i);
 %     Izy = Izy + (z_vec_cg(i)*y_vec_cg(i))*mass_vec(i); 
+
+    % treating cube as a rigid body
+    % assuming cube xz plane aligns with that of the aircraft
+    % assuming x axis and z axis are parallel with those of the aircraft
+    if (i == 1)
+        Ixx = Ixx +  mass_vec(1)*(cubeLength^2)/6;
+        Iyy = Iyy +  mass_vec(1)*(cubeLength^2)/6;
+        Izz = Izz +  mass_vec(1)*(cubeLength^2)/6;
+    end
 end
 
 Iyx = Ixy;
