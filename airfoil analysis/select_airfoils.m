@@ -24,7 +24,7 @@ end
 % [~,I] = maxk(afmetrics(:,1),10);
 % selected_airfoils_Eff = char(list_airfoils(I,1));
 
-[~,I] = maxk(afmetrics(:,2),k);
+[~,I] = mink(afmetrics(:,2),k);
 selected_airfoils = (list_airfoils(I,1));
 
 outAFMetrics = afmetrics;
