@@ -8,8 +8,9 @@
 clc
 clear all
 
+
 %% Test Structure
-test.airfoil = ["NACA21015","NACA21016"] ;
+test.airfoil = ('NACA21015' 'NACA21015') ;
 test.reynolds_number = 100000;
 test.mach = 0.1;
 test.alpha = (-5:0.2:15);
@@ -19,21 +20,20 @@ i = 1;
 
 %loop through airfoils
 
-for a = 1:length(test.airfoil)
-    afoil_geo = char(test.airfoil(a));
-    %loop through Reynolds numbers
-    reynold_number = test.reynolds_number;
 
-    %run xfoil
-    [pol foil] = xfoil(afoil_geo,test.alpha,reynold_number,test.mach,'ppar n 100','oper iter 600');
-
-    %convert to character array
-    Re = sprintf('Re%d', reynold_number);
-
-    %generate database
-    data.(afoil_geo).(Re).foil = foil;
-    data.(afoil_geo).(Re).pol = pol;
-end
+afoil_geo = char(test.airfoil);
+%loop through Reynolds numbers
+reynold_number = test.reynolds_number;
+        
+%run xfoil
+[pol foil] = xfoil(afoil_geo,test.alpha,reynold_number,test.mach,'ppar n 100','oper iter 600');
+           
+%convert to character array
+Re = sprintf('Re%d', reynold_number);
+            
+%generate database
+data.(afoil_geo).(Re).foil = foil;
+data.(afoil_geo).(Re).pol = pol;
             
 
 %% plot 
