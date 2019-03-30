@@ -1,4 +1,4 @@
-naca 21016
+naca 8624
 ppar
 n
 100
@@ -10,8 +10,8 @@ iter
 
 
 oper
-re 100000
-mach 0.1
+re 250000
+mach 0.058
 visc
 pacc
 
@@ -319,6 +319,81 @@ cpwr xfoil_a14.800_cpwr.dat
 alfa 15
 dump xfoil_a15.000_dump.dat
 cpwr xfoil_a15.000_cpwr.dat
+alfa 15.2
+dump xfoil_a15.200_dump.dat
+cpwr xfoil_a15.200_cpwr.dat
+alfa 15.4
+dump xfoil_a15.400_dump.dat
+cpwr xfoil_a15.400_cpwr.dat
+alfa 15.6
+dump xfoil_a15.600_dump.dat
+cpwr xfoil_a15.600_cpwr.dat
+alfa 15.8
+dump xfoil_a15.800_dump.dat
+cpwr xfoil_a15.800_cpwr.dat
+alfa 16
+dump xfoil_a16.000_dump.dat
+cpwr xfoil_a16.000_cpwr.dat
+alfa 16.2
+dump xfoil_a16.200_dump.dat
+cpwr xfoil_a16.200_cpwr.dat
+alfa 16.4
+dump xfoil_a16.400_dump.dat
+cpwr xfoil_a16.400_cpwr.dat
+alfa 16.6
+dump xfoil_a16.600_dump.dat
+cpwr xfoil_a16.600_cpwr.dat
+alfa 16.8
+dump xfoil_a16.800_dump.dat
+cpwr xfoil_a16.800_cpwr.dat
+alfa 17
+dump xfoil_a17.000_dump.dat
+cpwr xfoil_a17.000_cpwr.dat
+alfa 17.2
+dump xfoil_a17.200_dump.dat
+cpwr xfoil_a17.200_cpwr.dat
+alfa 17.4
+dump xfoil_a17.400_dump.dat
+cpwr xfoil_a17.400_cpwr.dat
+alfa 17.6
+dump xfoil_a17.600_dump.dat
+cpwr xfoil_a17.600_cpwr.dat
+alfa 17.8
+dump xfoil_a17.800_dump.dat
+cpwr xfoil_a17.800_cpwr.dat
+alfa 18
+dump xfoil_a18.000_dump.dat
+cpwr xfoil_a18.000_cpwr.dat
+alfa 18.2
+dump xfoil_a18.200_dump.dat
+cpwr xfoil_a18.200_cpwr.dat
+alfa 18.4
+dump xfoil_a18.400_dump.dat
+cpwr xfoil_a18.400_cpwr.dat
+alfa 18.6
+dump xfoil_a18.600_dump.dat
+cpwr xfoil_a18.600_cpwr.dat
+alfa 18.8
+dump xfoil_a18.800_dump.dat
+cpwr xfoil_a18.800_cpwr.dat
+alfa 19
+dump xfoil_a19.000_dump.dat
+cpwr xfoil_a19.000_cpwr.dat
+alfa 19.2
+dump xfoil_a19.200_dump.dat
+cpwr xfoil_a19.200_cpwr.dat
+alfa 19.4
+dump xfoil_a19.400_dump.dat
+cpwr xfoil_a19.400_cpwr.dat
+alfa 19.6
+dump xfoil_a19.600_dump.dat
+cpwr xfoil_a19.600_cpwr.dat
+alfa 19.8
+dump xfoil_a19.800_dump.dat
+cpwr xfoil_a19.800_cpwr.dat
+alfa 20
+dump xfoil_a20.000_dump.dat
+cpwr xfoil_a20.000_cpwr.dat
 pwrt
 xfoil_pwrt.dat
 plis

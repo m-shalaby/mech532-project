@@ -9,17 +9,18 @@ clc
 clear all
 
 %% Test Structure
-test.airfoil = ["NACA21015","NACA21016"] ;
-test.reynolds_number = 100000;
-test.mach = 0.1;
-test.alpha = (-5:0.2:15);
-i = 1;
+% test.airfoil = ["naca21015","NACA21016"] ;
+airfoil_set = load('airfoilnameset1.mat');
+test.airfoil = airfoil_set.str_all ;
+test.reynolds_number = 250000;
+test.mach = 0.058;
+test.alpha = (-5:0.2:20);
 
 %% sweep through airfoil geometries
 
 %loop through airfoils
 
-for a = 1:length(test.airfoil)
+for a = 122:length(test.airfoil)
     afoil_geo = char(test.airfoil(a));
     %loop through Reynolds numbers
     reynold_number = test.reynolds_number;
@@ -29,6 +30,7 @@ for a = 1:length(test.airfoil)
 
     %convert to character array
     Re = sprintf('Re%d', reynold_number);
+    
 
     %generate database
     data.(afoil_geo).(Re).foil = foil;
@@ -37,6 +39,12 @@ end
             
 
 %% plot 
+
+% airfoilA = 
+% airfoilB = 
+% airfoilC = 
+% airfoilD = 
+
 
 % Plot CL vs Alpha
 subplot(2,2,1)
