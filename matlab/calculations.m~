@@ -1,6 +1,6 @@
 %% VARIABLES
 % inputs
-    m = 2;
+    m = 2.16;
     % J = ;
 
 % external conditions
@@ -48,5 +48,5 @@
     Re_bt = rho*V_bt*c_wing/mu;
 
 
-%% GLIDER
+%% Glid
 
