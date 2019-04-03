@@ -28,7 +28,15 @@ for l = 1:length(map_param.v)
     end
 end
 
-outClimbParam = [0;0;0];
+[~,I] = min(mapEnergy(:));
+
+[I,J,K] = ind2sub(size(mapEnergy),I);
+
+climb_v = map_param.v(I);
+climb_theta = map_param.theta(J);
+climb_alpha = map_param.alpha(K);
+
+outClimbParam = [climb_v;climb_theta;climb_alpha];
 outMapEnergy = mapEnergy;
 end
 

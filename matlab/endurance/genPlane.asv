@@ -5,6 +5,9 @@ function [outPlane] = genPlane(wingConfig)
 %test parameters
 plane.test.rho = 1.225;
 
+%BATTER
+
+
 %aircraft parameters
 if strcmp(wingConfig,'2208')
 
@@ -17,7 +20,7 @@ if strcmp(wingConfig,'2208')
     plane.CL(:,2) = plane2208(:,3);
     %structure
     plane.m = 2.2;
-    plane.S = 2.;
+    plane.S = 0.36;
 
 elseif strcmp(wingConfig,'2512')
     load('plane2512.mat');
@@ -28,7 +31,7 @@ elseif strcmp(wingConfig,'2512')
     plane.CL(:,2) = plane2512(:,3);
     %structure
     plane.m = 2.2;
-    plane.S = 2.5;
+    plane.S = 0.36;
 
 else 
     disp('Please enter a valid wing configuration');

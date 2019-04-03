@@ -5,6 +5,15 @@ function [outPlane] = genPlane(wingConfig)
 %test parameters
 plane.test.rho = 1.225;
 
+%propeller paprameters
+plane.propeller.eta;
+
+%battery parameters
+
+plane.batt.Vnom = 14.8;     %nominal battery voltage [V]
+plane.batt.totalQ = 2.2;    %total battery capacity [Ah]
+
+
 %aircraft parameters
 if strcmp(wingConfig,'2208')
 

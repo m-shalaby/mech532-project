@@ -1,0 +1,23 @@
+function [outFlight] = calcEndurance(plane,climb_states)
+%UNTITLED13 Summary of this function goes here
+%   Detailed explanation goes here
+
+
+%% Climb
+
+climb = Climb(plane, climb_states);
+
+%% Steady Flight 
+
+steady_fligh
+
+%% Descent
+
+
+%% Output
+
+outFlight.time = climb_endurance + steady_flight_endurance + descent_endurance;
+outFlight.SOC = ;
+
+end
+
