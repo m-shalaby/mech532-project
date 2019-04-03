@@ -1,0 +1,8 @@
+function [outThrust] = calcPropellerThrust(plane,V,CT)
+%calc Propeller Thrust calculates the thrust produced by the propeller
+%based on CT and V.
+
+outThrust = (plane.propeller.n^4)*plane.test.rho*(plane.propeller.D^4))*CT;
+
+end
+

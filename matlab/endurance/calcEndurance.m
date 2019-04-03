@@ -4,8 +4,7 @@ function [outFlight] = calcEndurance(plane,climb_states, maxAltitude)
 
 
 %% Climb
-
-climb = Climb(plane, climb_states, maxAltidude);
+climb = Climb(plane, climb_states, maxAltitude);
 
 %% Steady Flight 
 

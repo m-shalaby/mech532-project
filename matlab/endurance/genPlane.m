@@ -8,14 +8,17 @@ plane.test.rho = 1.225;
 %propeller paprameters
 load('apce11x7.mat');
 plane.propeller.data = apce11x7;
-plane.propeller.A = pi*(0.2794/2)^2;
+plane.propeller.D = 0.2794;     %[m]
+plane.propeller.n = 100;        %6000[rev/s]
+
 
 %motor parameters
 plane.motor.eff = 0.9;
+plane.motor.n = 2;
 
 %battery parameters
 plane.batt.Vnom = 14.8;     %nominal battery voltage [V]
-plane.batt.totalQ = 2.2;    %total battery capacity [Ah]
+plane.batt.totalQ = 7920;    %total battery capacity [As]
 
 
 %aircraft parameters
