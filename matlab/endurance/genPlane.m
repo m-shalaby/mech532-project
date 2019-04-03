@@ -6,10 +6,14 @@ function [outPlane] = genPlane(wingConfig)
 plane.test.rho = 1.225;
 
 %propeller paprameters
-plane.propeller.eta;
+load('apce11x7.mat');
+plane.propeller.data = apce11x7;
+plane.propeller.A = pi*(0.2794/2)^2;
+
+%motor parameters
+plane.motor.eff = 0.9;
 
 %battery parameters
-
 plane.batt.Vnom = 14.8;     %nominal battery voltage [V]
 plane.batt.totalQ = 2.2;    %total battery capacity [Ah]
 

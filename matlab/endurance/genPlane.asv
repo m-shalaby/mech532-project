@@ -5,7 +5,14 @@ function [outPlane] = genPlane(wingConfig)
 %test parameters
 plane.test.rho = 1.225;
 
-%BATTER
+%propeller paprameters
+load('apce11x7.mat');
+plane.propeller.eta = apce11x7;
+plane.propeller.A = 
+%battery parameters
+
+plane.batt.Vnom = 14.8;     %nominal battery voltage [V]
+plane.batt.totalQ = 2.2;    %total battery capacity [Ah]
 
 
 %aircraft parameters

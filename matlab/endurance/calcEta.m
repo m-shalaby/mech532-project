@@ -1,7 +1,11 @@
-function [outputArg1,outputArg2] = calcEta(plane,Ct)
-%UNTITLED15 Summary of this function goes here
-%   Detailed explanation goes here
-outputArg1 = inputArg1;
-outputArg2 = inputArg2;
+function [outEta] = calcEta(plane,CT)
+%Calculate propeller efficiency based on propeller Coeffient of thrust
+
+if CT > max(plane.propeller.data(:,2)) || CT < min(plane.propeller.data(:,2))
+    disp('CT outside of range');
+    return
+else
+    outEta = interp1(plane.propeller.data(:,2),plane.propeller.data(:,4),CT);
+end
 end
 
