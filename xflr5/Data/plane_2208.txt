@@ -1,6 +1,6 @@
 xflr5 v6.44
 
-Plane name :        Plane Name
+Plane name :        Plane - 2208 Airfoil
 Polar name :        T1-20.0 m/s-VLM2
 Freestream speed :  20.000 m/s
 
