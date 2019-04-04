@@ -3,31 +3,37 @@
 clc
 clear all
 
-%setup plane 
+%% setup plane 
 wingID = '2208';
 plane = genPlane(wingID);
 
-%calculate total endurance
-
+%endurance flight parameters
 total_climb = 100;
+%climb mapping sweeps
+map_param.v = 1:0.5:15;             %Velocity 
+map_param.theta = 1:0.5:15;        %theta
+map_param.alpha = -3:0.1:10;        %alpha
 
-map_param.v = 5:0.5:20;        %Velocity 
-map_param.theta = 1:0.5:25;        %theta
-map_param.alpha = -5.05:0.1:5;       %alpha
+%% -------------------Climb Optimization------------------------------
 
+% [climb_states,map] = optimizeClimbparam(plane, total_climb, map_param);
 
-[~,map] = optimizeClimbparam(plane, total_climb, map_param);
-
-
-%%
-[C,I] = min(map(:));
-
-[I,J,K] = ind2sub(size(map),I);
+climb_states = [9.5; 12; -0.5];
 
 
-climb_v = map_param.v(I);
-climb_theta = map_param.theta(J);
-climb_alpha = map_param.alpha(K);
+%% -------------------Steady Flight Optimization------------------------------
+
+fun = 
+x0 = 2000;
+distance = fminsearch(fun,x0);
+
+%% ------------------Endurance Calculation----------------------------
+
+maxAltitude = 100;
+flight = calcFlight(plane,climb_states, maxAltitude);
+
+
+
 
 
 

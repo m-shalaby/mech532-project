@@ -1,13 +1,13 @@
-function [outFlight] = calcFlight(plane,climb_states, maxAltitude)
-%UNTITLED13 Summary of this function goes here
-%   Detailed explanation goes here
+function [outFlight] = calcFlight(plane,climb_states, distance)
+%calcFlight simulates the flight with a given climb states and steady
+%flight distance.
 
 %% Take off
 takeoff = Takeoff(plane,climb_states(1));
 
 %% Climb
 initQ = takeoff.Q(length(takeoff.Q));
-climb = Climb(plane, climb_states, maxAltitude, initQ);
+climb = Climb(plane, climb_states, plane.test.maxAltitude, initQ);
 
 %% Steady Flight A
 initQ = climb.endQ;

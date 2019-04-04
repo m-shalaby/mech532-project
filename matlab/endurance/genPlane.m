@@ -5,12 +5,13 @@ function [outPlane] = genPlane(wingConfig)
 %test parameters
 plane.test.rho = 1.225;
 plane.test.mu = 0.2;
+plane.test.maxAltitude = 100;
 
 %propeller paprameters
 load('apce11x7.mat');
 plane.propeller.data = apce11x7;
-plane.propeller.D = 0.2794;     %[m]
-plane.propeller.n = 100;        %6000[rev/s]
+plane.propeller.D = 0.2794;         %[m]
+plane.propeller.n = 100;            %6000[rev/s]
 plane.propeller.staticCT = 0.11;
 
 %motor parameters
@@ -24,9 +25,7 @@ plane.batt.totalQ = 7920;    %total battery capacity [As]
 
 %aircraft parameters
 if strcmp(wingConfig,'2208')
-
     load('plane2208.mat');
-
     %Performance 
     plane.CD(:,1) = plane2208(:,1);
     plane.CD(:,2) = plane2208(:,6);
@@ -50,7 +49,6 @@ elseif strcmp(wingConfig,'2512')
 else 
     disp('Please enter a valid wing configuration');
 end
-
 outPlane = plane;
 end
 
