@@ -1,20 +1,4 @@
-%% VARIABLES
-% inputs
-    m = 2.16;
-    % J = ;
-
-% external conditions
-    g = 9.81;
-    rho = 1.225; %assume constant
-    mu = 1.81E-5;
-
-% aircraft properties
-    b_wing = 2;
-    
-% calculations
-    c_wing = m/(6*b_wing)  % based on wing loading
-    S_wing = b_wing * c_wing   % assuming rectangular wing
-
+aircraftParameters()
 
 %% GROUND RUN
 
@@ -48,5 +32,5 @@
     Re_bt = rho*V_bt*c_wing/mu;
 
 
-%% Glid
+%% GLIDER
 
