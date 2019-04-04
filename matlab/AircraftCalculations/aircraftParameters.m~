@@ -1,0 +1,41 @@
+%% LOA
+
+%% EXTERNAL CONDITIONS
+    g = 9.81;
+    rho = 1.225; %assume constant
+    mu = 1.81E-5;
+
+%% WING SECTION
+    % Inputs:
+        
+        
+    % Constants:
+        b_wing = 2;
+        
+%% Horizontal Stabilizer
+    % Inputs:
+        airfoil = 'NACA0009';
+        c_hStabilizer_0 = 0.12;
+        c_hStabilizer_1 = 0.10;
+        b_hStabilizer   = 0.60;
+        
+    % Constants:
+        
+    % Calculations:
+        airfoil_area = load()
+
+%% FIN
+
+
+%% MISCELLANEOUS
+
+
+%% TOTAL
+% aircraft properties
+    m = 2;
+    % J = ;
+
+% calculations
+    c_wing = m/(6*b_wing)  % based on wing loading
+    S_wing = b_wing * c_wing   % assuming rectangular wing
+

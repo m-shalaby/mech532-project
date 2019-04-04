@@ -1,0 +1,16 @@
+clear; clc
+
+%% Set up airfoils.
+
+airfoil = '2512';
+
+iaf.designation=airfoil;
+iaf.n=250;
+iaf.HalfCosineSpacing=0;
+iaf.wantFile=1;
+iaf.datFilePath='./'; % Current folder
+iaf.is_finiteTE=0;
+
+x = naca4gen(iaf);
+
+save(data, af, '-append')
