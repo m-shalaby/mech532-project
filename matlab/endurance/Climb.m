@@ -1,4 +1,4 @@
-function [outClimb] = Climb(plane,climb_states, maxAltidude)
+function [outClimb] = Climb(plane,climb_states, maxAltidude, initQ)
 %Climb calculates climb flight 
 
 %Calcualte minimum thrust to climb and minimum CL
@@ -19,12 +19,13 @@ else
     power = thrust * climb_states(1) / calcEta(plane,minCT); 
     time = maxAltidude / (climb_states(1)*sind(climb_states(2)));
     totalEnergy = power*time/plane.motor.eff;
-    SOC = (plane.batt.totalQ - (totalEnergy/plane.batt.Vnom))/plane.batt.totalQ;
+    SOC = (initQ - (totalEnergy/plane.batt.Vnom))/plane.batt.totalQ;
     %output
     climb.thrust = thrust;
     climb.power = power;
     climb.time = time;
     climb.totalEnergy = totalEnergy;
+    climb.endQ = initQ - totalEnergy;
     climb.SOC = SOC;
     climb.flag = 0;
 end

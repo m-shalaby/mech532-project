@@ -14,6 +14,7 @@ SOC = zeros(1,length(Simtime));
 Q(1) = plane.batt.totalQ;
 v(1) = 0.1;
 SOC(1) = 100;
+
 %forward euler
 for n = 1:length(Simtime)
     if v(n) >= climbV
@@ -39,7 +40,7 @@ for n = 1:length(Simtime)
     Ax(n) = (thrust-drag-friction)/plane.m;
     v(n+1) = v(n) + (Ax(n)*dt);
     dx(n) = v(n)*dt;
-    power(n) = plane.m*Ax(n)*v(n);
+    power(n) = plane.m*Ax(n)*v(n)/plane.motor.eff;
     Q(n+1) = (Q(n) - (power(n)*dx(n)/plane.batt.Vnom));
     SOC(n+1) = (Q(n+1)*100)/plane.batt.totalQ;
     end
