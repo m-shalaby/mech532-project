@@ -2,7 +2,7 @@ function [outClimb] = Climb(plane,climb_states, maxAltidude)
 %Climb calculates climb flight 
 
 %Calcualte minimum thrust to climb and minimum CL
-minCT = calcCT(plane,climb_states);
+minCT = calcClimbCT(plane,climb_states);
 minCL = (plane.m*9.81)/(cosd(climb_states(2))*0.5*plane.test.rho*plane.S*((climb_states(1))^2));
 % minalpha = calcAlpha(plane,minCL);
 

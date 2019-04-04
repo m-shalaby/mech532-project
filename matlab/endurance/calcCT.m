@@ -1,10 +1,14 @@
-function [outCT] = calcCT(plane, states)
-%calcCT calculates the propeller coefficient of thrust required at steady state for
-%a given speed, climb angle and angle of attack.
+function [outCT] = calcCT(plane,v)
+%This function calculates the propeller thrust coefficient for a given
+%speed at 6000 rpm.
 
-drag = 0.5*plane.test.rho*plane.S*calcCd(plane,states(3))*(states(1)^2);
+J = v / (plane.propeller.n*plane.propeller.D);
 
-outCT = (drag + (plane.m*9.81*sind(states(2))))/((plane.propeller.n^2)*plane.test.rho*(plane.propeller.D^4));
+if J < min(plane.propeller.data(:,1))
+    outCT = plane.propeller.staticCT;
+else
+    outCT = interp1(plane.propeller.data(:,1),plane.propeller.data(:,2),J);
+end
 
 end
 

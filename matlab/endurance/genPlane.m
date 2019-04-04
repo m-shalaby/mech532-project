@@ -4,13 +4,14 @@ function [outPlane] = genPlane(wingConfig)
 
 %test parameters
 plane.test.rho = 1.225;
+plane.test.mu = 0.2;
 
 %propeller paprameters
 load('apce11x7.mat');
 plane.propeller.data = apce11x7;
 plane.propeller.D = 0.2794;     %[m]
 plane.propeller.n = 100;        %6000[rev/s]
-
+plane.propeller.staticCT = 0.11;
 
 %motor parameters
 plane.motor.eff = 0.9;

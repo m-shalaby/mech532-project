@@ -2,28 +2,22 @@ function [outFlight] = calcFlight(plane,climb_states, maxAltitude)
 %UNTITLED13 Summary of this function goes here
 %   Detailed explanation goes here
 
-
-%% take off
-
-
+%% Take off
+takeoff = Takeoff(plane,climb_states(1));
 
 %% Climb
 climb = Climb(plane, climb_states, maxAltitude);
 
-%% Steady Flight 
+%% Steady Flight
+steady_flight = SteadyFlight(plane, Q);
 
-steady_flight = SteadyFlight(plane);
+%% Banked Turn
+
 
 %% Descent
 
-descent = 
 
 %% Output
-
-outFlight.climb = climb;
-outFlight.time = climb_endurance + steady_flight_endurance + descent_endurance;
-outFlight.SOC = ;
-
 
 
 end
