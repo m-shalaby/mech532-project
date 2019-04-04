@@ -1,0 +1,36 @@
+%% load airfoils
+
+airfoils = load('airfoils');
+
+
+%% calculate area (using trapezoidal rule and 1-D interpolation)
+
+airfoil_names = cell2mat(fieldnames(airfoils));
+
+for i=1:1:length(airfoil_names)
+    airfoil_iter = airfoil_names(1,:);
+    
+    % Trapezoidal Rule
+    area_iter = 0;
+    for j=2:1:length(airfoils.(z).xU)
+                
+        x_0 = airfoils.(z).xU(j-1);
+        x_1 = airfoils.(z).xU(j);
+        
+        z_upper_0 = airfoils.(z).zU(j-1);
+        z_upper_1 = airfoils.(z).zU(j);
+        
+        z_lower_0 = interp1(airfoils.(z).xL, airfoils.(z).zL, x_0); % interpolate to find corresponding lower part
+        z_lower_1 = interp1(airfoils.(z).xL, airfoils.(z).zL, x_1); % interpolate to find corresponding lower part
+        
+        z_0 = z_upper_0 - z_lower_0;
+        z_1 = z_upper_1 - z_lower_1;
+        
+        area_iter = area_iter + (z_0+z_1)/2*(x_1-x_0);
+        
+    end
+    
+    
+    
+end
+    
