@@ -1,6 +1,6 @@
 %% VARIABLES
 % inputs
-    m = 2;
+    m_ = 2;
     % J = ;
 
 % external conditions

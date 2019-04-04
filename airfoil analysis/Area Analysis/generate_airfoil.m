@@ -2,7 +2,7 @@ clear; clc
 
 %% Set up airfoils.
 
-airfoil = 'NACA2512';
+airfoil = 'NACA0009';
 
 iaf.designation=airfoil(5:8);
 iaf.n=250;
