@@ -1,0 +1,34 @@
+function [outAlpha] = calcAlphaGliding(plane)
+%UNTITLED27 Summary of this function goes here
+%   Detailed explanation goes here
+
+glide_metric_initial = plane.CD(:,2)./(abs(plane.CL(:,2)).^1.5);
+m = 1;
+for n = 1:length(glide_metric_initial)
+    if plane.CL(n) < 0
+        continue
+    else
+        glide_metric(m,1) = plane.CL(n,1);
+        glide_metric(m,2) = glide_metric_initial(n);
+        m = m+1;
+    end
+end
+
+p = polyfit(glide_metric(:,1),glide_metric(:,2),8);
+
+x1 = linspace(glide_metric(1,1), glide_metric(m-1,1),150);
+y1 = polyval(p,x1);
+figure
+plot(glide_metric(:,1),glide_metric(:,2),'o')
+hold on
+plot(x1,y1)
+
+xq = 
+outAlpha = interp1(x1,y1,xq);
+
+
+
+outAlpha = glide_metric;
+
+end
+

@@ -18,11 +18,12 @@ deltaQ_SF = plane.batt.totalQ - plane.batt.safetyQ - flight.takeoff.deltaQ - fli
 flight.steady_flight = SteadyFlight(plane,deltaQ_SF);
 
 %% Descent
-% flight.descent = DescentFlight(plane, v, altitude);
+v = 20;
+flight.descent = Descent(plane, v, plane.test.maxAltitude);
 
 %% flight metrics
-flight.time = flight.climb.time + flight.banked_turn.time + flight.steady_flight.time;
-flight.distance = flight.climb.distance + flight.banked_turn.distance + flight.steady_flight.distance;
+flight.time = flight.climb.time + flight.banked_turn.time + flight.steady_flight.time + flight.descent.time;
+flight.distance = flight.climb.distance + flight.banked_turn.distance + flight.steady_flight.distance + flight.descent.distance;
 
 %% Output
 outFlight = flight; 
