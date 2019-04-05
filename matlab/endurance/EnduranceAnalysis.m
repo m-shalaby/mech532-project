@@ -27,7 +27,7 @@ climb_states = [9.5; 12; -0.5];
 
 %% ------------------Endurance Calculation---------------------------------
 
-flight = calcFlight(plane,climb_states)
+flight = calcFlight(plane,climb_states) %#ok<NOPTS>
 
 %% ------------------------------------------------------------------------
 

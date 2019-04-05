@@ -6,7 +6,7 @@ function [outFlight] = calcFlight(plane,climb_states)
 flight.takeoff = Takeoff(plane,climb_states(1));
 
 %% Climb
-flight.climb = Climb(plane, climb_states, plane.test.maxAltitude);
+flight.climb = Climb(plane, climb_states);
 
 %% 180 deg Banked Turn
 radius = 150;
