@@ -27,6 +27,7 @@ for n = 1:length(Simtime)
     takeoff.dx = dx(1:n);
     takeoff.distance = sum(dx(1:n));
     takeoff.time = dt*n;
+    takeoff.deltaQ = Q(1)-(Q(n));
     break
     else
     %thrust

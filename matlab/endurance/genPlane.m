@@ -21,6 +21,7 @@ plane.motor.n = 2;
 %battery parameters
 plane.batt.Vnom = 14.8;     %nominal battery voltage [V]
 plane.batt.totalQ = 7920;    %total battery capacity [As]
+plane.batt.safetyQ = 0.05*plane.batt.totalQ;
 
 
 %aircraft parameters

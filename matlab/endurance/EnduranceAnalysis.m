@@ -21,21 +21,13 @@ map_param.alpha = -3:0.1:10;        %alpha
 
 climb_states = [9.5; 12; -0.5];
 
-
-%% -------------------Steady Flight Optimization---------------------------
-
-fun = @(x,plane, climb_states)Flight_finalQ(x,plane,climb_states);
-x0 = 2000;
-distance = fminsearch(fun,x0);
-
 %% ------------------Endurance Calculation---------------------------------
 
-maxAltitude = 100;
-flight = calcFlight(plane,climb_states, distance);
+flight = calcFlight(plane,climb_states);
 
 %% ------------------Flight Analysis --------------------------------------
 
-total_endurance = flight.total_time;
+% total_endurance = flight.total_time;
 
 
 
