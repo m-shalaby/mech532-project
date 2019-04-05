@@ -6,7 +6,7 @@ clear all
 %% ------------------------INPUT (Setup plane & test)----------------------
 
 %set wing ID
-wingID = '2208';
+wingID = '2512';
 
 %flight mission
 total_climb = 100;

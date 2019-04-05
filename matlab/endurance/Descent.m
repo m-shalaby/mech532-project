@@ -16,5 +16,6 @@ descent.time = altitude/descent.vs;
 descent.distance = descent.vg*descent.time;
 %output
 outDescent = descent;
+
 end
 
