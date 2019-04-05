@@ -1,7 +1,7 @@
 function [outDescent] = Descent(plane,altitude)
 %Descent calculates the descent flight.
 
-v = plane.test.v;
+v
 alpha_glide = calcAlphaGliding(plane);
 CL = calcCL(plane,alpha_glide);
 CD = calcCd(plane,alpha_glide);

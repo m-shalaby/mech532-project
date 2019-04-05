@@ -1,8 +1,8 @@
-function [outBakedTurn] = BankedTurn(plane,R,v)
+function [outBakedTurn] = BankedTurn(plane,R)
 %BankedTurn calculates the total flight time and energy for performing
 %banked turn.
 
-
+v = plane.test.v;
 banking_angle = atand((v^2)/(9.81*R));
 banked_turn.CL = (plane.m*9.81)/(0.5*plane.test.rho*plane.S*(cosd(banking_angle))*v^2);
 w = v/R;

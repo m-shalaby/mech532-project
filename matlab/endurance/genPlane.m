@@ -6,6 +6,7 @@ function [outPlane] = genPlane(wingConfig)
 plane.test.rho = 1.225;
 plane.test.mu = 0.2;
 plane.test.maxAltitude = 100;
+plane.test.v = 20;
 
 %propeller paprameters
 load('apce11x7.mat');

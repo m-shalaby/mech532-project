@@ -10,16 +10,14 @@ flight.climb = Climb(plane, climb_states, plane.test.maxAltitude);
 
 %% 180 deg Banked Turn
 radius = 150;
-v = 20;
-flight.banked_turn = BankedTurn(plane,radius,v);
+flight.banked_turn = BankedTurn(plane,radius);
 
 %% Steady Flight
 flight.steady_flight.deltaQ_SF = plane.batt.totalQ - plane.batt.safetyQ - flight.takeoff.deltaQ - flight.climb.deltaQ - flight.banked_turn.deltaQ ;
 flight.steady_flight = SteadyFlight(plane,flight.steady_flight.deltaQ_SF);
 
 %% Descent
-v = 20;
-flight.descent = Descent(plane, v, plane.test.maxAltitude);
+flight.descent = Descent(plane, plane.test.maxAltitude);
 
 %% flight metrics
 flight.time = flight.climb.time + flight.banked_turn.time + flight.steady_flight.time + flight.descent.time;

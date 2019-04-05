@@ -3,7 +3,7 @@ function [outSteadyFlight] = SteadyFlight(plane,deltaQ)
 %20 m/s.
 
 %speed
-v = 20;
+v = plane.test.v;
 
 %capacity
 CL = (plane.m*9.81)/(0.5*plane.test.rho*plane.S*(v^2));
