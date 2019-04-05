@@ -16,7 +16,7 @@ plane.propeller.staticCT = 0.11;
 
 %motor parameters
 plane.motor.eff = 0.9;
-plane.motor.n = 2;
+plane.motor.n = 1;
 
 %battery parameters
 plane.batt.Vnom = 14.8;     %nominal battery voltage [V]

@@ -14,8 +14,8 @@ v = 20;
 flight.banked_turn = BankedTurn(plane,radius,v);
 
 %% Steady Flight
-deltaQ_SF = plane.batt.totalQ - plane.batt.safetyQ - flight.takeoff.deltaQ - flight.climb.deltaQ - flight.banked_turn.deltaQ ;
-flight.steady_flight = SteadyFlight(plane,deltaQ_SF);
+flight.steady_flight.deltaQ_SF = plane.batt.totalQ - plane.batt.safetyQ - flight.takeoff.deltaQ - flight.climb.deltaQ - flight.banked_turn.deltaQ ;
+flight.steady_flight = SteadyFlight(plane,flight.steady_flight.deltaQ_SF);
 
 %% Descent
 v = 20;

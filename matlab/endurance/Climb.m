@@ -18,7 +18,7 @@ else
     thrust = calcPropellerThrust(plane,minCT);
     power = thrust * climb_states(1) / calcEta(plane,minCT); 
     time = maxAltidude / (climb_states(1)*sind(climb_states(2)));
-    deltaQ = power*time/plane.motor.eff;
+    deltaQ = power*time/(plane.motor.eff*plane.batt.Vnom);
     %output
     climb.thrust = thrust;
     climb.power = power;
