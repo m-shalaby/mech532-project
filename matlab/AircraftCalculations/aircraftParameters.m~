@@ -1,4 +1,5 @@
-%% LOA
+%% LOAD EXTERNAL FILES
+    airfoil_areas = load('../../airfoil analysis/area_analysis/airfoil_areas.mat');
 
 %% EXTERNAL CONDITIONS
     g = 9.81;
@@ -18,17 +19,29 @@
         c_hStabilizer_0 = 0.12;
         c_hStabilizer_1 = 0.10;
         b_hStabilizer   = 0.60;
+        iter_step = 10^-4
         
     % Constants:
         
     % Calculations:
-        airfoil_area = load()
-
+        airfoil_area_hStabilizer = airfoil_areas.(airfoil);
+        
+        %trapezoidal rule to calculate volume
+        volume = 0;
+        iter = c_hStabilizer_0:10^-4:c_hStabilizer_1;
+        for i=1:1:abs((c_hStabilizer_0-c_hStabilizer_1)/iter_step)
+            airfoil_area_hStabilizer_iter0 = iter(i)*airfoil_area_hStabilizer;
+            airfoil_area_hStabilizer_iter0 = iter(i+1)*airfoil_area_hStabilizer;
+            
+        volume = ; 
+        
+        m_hStabilizer = volume * 30;
+        
 %% FIN
 
 
 %% MISCELLANEOUS
-
+    % Input:
 
 %% TOTAL
 % aircraft properties
