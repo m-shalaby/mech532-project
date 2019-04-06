@@ -20,7 +20,7 @@ flight.steady_flight = SteadyFlight(plane,flight.steady_flight.deltaQ_SF);
 flight.descent = Descent(plane, plane.test.maxAltitude);
 
 %% flight metrics
-flight.time = (flight.climb.time + flight.banked_turn.time + flight.steady_flight.time + flight.descent.time)/3600;
+flight.time = (flight.climb.time + flight.banked_turn.time + flight.steady_flight.time + flight.descent.time)/60;
 flight.distance = (flight.climb.distance + flight.banked_turn.distance + flight.steady_flight.distance + flight.descent.distance)/1000;
 
 %% Output
