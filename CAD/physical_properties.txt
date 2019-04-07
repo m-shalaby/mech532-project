@@ -1,0 +1,27 @@
+Physical Properties for Assembly
+General Properties:
+	Material:	{}
+	(Average) Density:	0.224 g/cm^3
+	Mass:	1.699 kg (Relative Error = 0.302060%)
+	Area:	2111929.028 mm^2 (Relative Error = 0.463872%)
+	Volume:	7570797.533 mm^3 (Relative Error = 0.302060%)
+Center of Gravity:
+	X:	-302.291 mm (Relative Error = 0.302060%)
+	Y:	-0.000 mm (Relative Error = 0.302060%)
+	Z:	-17.318 mm (Relative Error = 0.302060%)
+Mass Moments of Inertia with respect to Center of Gravity(Calculated using negative integral)
+	Ixx        	52468.763 kg mm^2 (Relative Error = 0.302060%)
+	Iyx Iyy    	-0.005 kg mm^2 (Relative Error = 0.302060%)	64833.093 kg mm^2 (Relative Error = 0.302060%)
+	Izx Izy Izz	-5194.937 kg mm^2 (Relative Error = 0.302060%)	-1.856 kg mm^2 (Relative Error = 0.302060%)	110908.930 kg mm^2 (Relative Error = 0.302060%)
+Mass Moments of Inertia with respect to Global(Calculated using negative integral)
+	Ixx        	52978.314 kg mm^2 (Relative Error = 0.302060%)
+	Iyx Iyy    	-0.015 kg mm^2 (Relative Error = 0.302060%)	220598.233 kg mm^2 (Relative Error = 0.302060%)
+	Izx Izy Izz	-14089.358 kg mm^2 (Relative Error = 0.302060%)	-1.857 kg mm^2 (Relative Error = 0.302060%)	266164.518 kg mm^2 (Relative Error = 0.302060%)
+Principal Moments of Inertia with respect to Center of Gravity
+	I1:	52010.560 kg mm^2 (Relative Error = 0.302060%)
+	I2:	64833.093 kg mm^2 (Relative Error = 0.302060%)
+	I3:	111367.132 kg mm^2 (Relative Error = 0.302060%)
+Rotation from Global to Principal
+	Rx:	-0.00 deg (Relative Error = 0.302060%)
+	Ry:	5.04 deg (Relative Error = 0.302060%)
+	Rz:	-0.00 deg (Relative Error = 0.302060%)
