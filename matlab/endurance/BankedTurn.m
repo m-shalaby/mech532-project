@@ -3,8 +3,8 @@ function [outBakedTurn] = BankedTurn(plane,R)
 %banked turn.
 
 v = plane.test.v;
-banking_angle = atand((v^2)/(9.81*R));
-banked_turn.CL = (plane.m*9.81)/(0.5*plane.test.rho*plane.S*(cosd(banking_angle))*v^2);
+banked_turn.banking_angle = atand((v^2)/(9.81*R));
+banked_turn.CL = (plane.m*9.81)/(0.5*plane.test.rho*plane.S*(cosd(banked_turn.banking_angle))*v^2);
 w = v/R;
 
 %time
