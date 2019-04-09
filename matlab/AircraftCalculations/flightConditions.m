@@ -4,7 +4,7 @@ aircraftParameters()
 %% GROUND RUN
 
 
-
+m_total = 1.76;
 %% CLIMB
 
 
