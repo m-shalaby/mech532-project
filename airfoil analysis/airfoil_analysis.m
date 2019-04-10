@@ -16,6 +16,13 @@ load('airfoil_data.mat');
 %% calculate airfoil metrics
 
 
+% rho = 1.225;
+% m = 1.7;
+% S = 0.3;
+% V = 20;
+
+% CL = (m*9.81)/(0.5*rho*S*(20^2));
+
 [airfoil_list, airfoil_metrics] = select_airfoils(data, 0.24, 0.26, 10);
 
 airfoil_metrics(airfoil_metrics>5) = 0;
@@ -151,7 +158,15 @@ set(gcf, 'Position', [70, 80, 1000, 650])
 
 %% Plot airfoil
 
-
+figure();
+plot(data.(airfoilA).Re250000.foil.x(1:100,1),data.(airfoilA).Re250000.foil.y(1:100,1),...
+    data.(airfoilD).Re250000.foil.x(1:100,1),data.(airfoilD).Re250000.foil.y(1:100,1),'--b','Linewidth',line_width)
+legend(airfoilA,airfoilD,'Interpreter','latex');
+xlabel('x coordinates','fontsize',font_size,'Interpreter','latex');
+ylabel('y coordinates','fontsize',font_size,'Interpreter','latex');
+title('Airfoil Geometries','fontsize',font_size,'Interpreter','latex');
+grid on
+axis equal
 
 
 

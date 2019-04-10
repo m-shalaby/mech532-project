@@ -66,8 +66,8 @@ elseif strcmp(wingConfig,'4')
     plane.CL(:,1) = DesignIteration3(:,1);
     plane.CL(:,2) = DesignIteration3(:,3);
     %structure
-    plane.m = 1.6;
-    plane.S = 0.26;
+    plane.m = 1.747;
+    plane.S = 0.29;
 
 else 
     disp('Please enter a valid wing configuration');

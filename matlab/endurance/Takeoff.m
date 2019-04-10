@@ -3,7 +3,7 @@ function [outTakeoff] = Takeoff(plane,climbV)
 
 %initialization
 dt = 0.01;
-Simtime = 0:dt:7;
+Simtime = 0:dt:20;
 dx = zeros(1,length(Simtime));
 Ax = zeros(1,length(Simtime));
 v = zeros(1,length(Simtime));

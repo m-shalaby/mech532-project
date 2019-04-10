@@ -1,4 +1,4 @@
-function [outClimbParam] = optimizeClimbparam(plane)
+function [outClimbParam,outMapEnergy] = optimizeClimbparam(plane, map_param)
 %optimizeClimbparam finds the best operating parameters for maximising
 %climb endurance.
 
@@ -8,12 +8,12 @@ for l = 1:length(map_param.v)
     for m = 1:length(map_param.theta)
         for n = 1:length(map_param.alpha)
             climb_states = [map_param.v(l), map_param.theta(m), map_param.alpha(n)];
-            climb = Climb(plane,climb_states,total_climb);
+            climb = Climb(plane,climb_states);
             if climb.flag == 1
                 mapEnergy(l,m,n) = 1E9;
                 continue
             else
-            mapEnergy(l,m,n) = climb.totalEnergy;
+            mapEnergy(l,m,n) = climb.deltaQ;
             end
         end
     end
